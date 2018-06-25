@@ -13,10 +13,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
     traj_file_path = args.traj_file_path
     out_name = args.out_name
-    
+
     traj = readdy.Trajectory(traj_file_path)
-    particle_radii = {"Head": 0.5, "Tail": 0.5}
+    particle_radii = {"core": 1., "site": 0.25, "dummy": 0.1}
     traj.convert_to_xyz(xyz_filename=out_name, particle_radii=particle_radii)
 
     print("done convert_traj ..")
-
